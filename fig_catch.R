@@ -7,10 +7,13 @@ library(writexl)
 ####
 ## This script will prepare a figure with a time series of catches of salmon by Swedish fishers
 ## both recreational and commericial in the Bailtc sea and rivers entering the Baltic sea.
-##
+## The data for freshwater is taken from (the excel-dump of) fishdb, the data for the Baltic
+## sea is taken from the WGBAST catch database.
 
 source("theme_rom.R")
 
+
+## You can chang the location of the files if you want to run on "private" copies of the data
 Data_root_folder <- "//storage-dh.slu.se/restricted$/Lax/Data"
 WGBAST_folder <- "WGBAST_CatchDatabase"
 Fishdata_folder <- "fishdb"
