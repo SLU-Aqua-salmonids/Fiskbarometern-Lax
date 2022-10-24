@@ -37,3 +37,9 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Output from the script that ca be re-generated
+catch_long.xlsx
+catch_wide.xlsx
+fig_catch.png
+
