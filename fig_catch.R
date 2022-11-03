@@ -3,14 +3,14 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(writexl)
-
+library(ggaqua) # https://github.com/maxlindmark/ggaqua
 ####
 ## This script will prepare a figure with a time series of catches of salmon by Swedish fishers
-## both recreational and commericial in the Bailtc sea and rivers entering the Baltic sea.
+## both recreational and commercial in the Bailtc sea and rivers entering the Baltic sea.
 ## The data for freshwater is taken from (the excel-dump of) fishdb, the data for the Baltic
 ## sea is taken from the WGBAST catch database.
 
-source("theme_rom.R")
+
 
 
 ## You can chang the location of the files if you want to run on "private" copies of the data
@@ -65,9 +65,6 @@ landed_wide  <- landed_per_year %>%
 write_xlsx(landed_per_year, "catch_long.xlsx")
 write_xlsx(landed_wide, "catch_wide.xlsx")
 
-
-# And also replace points with commas in the plot options(OutDec= ",") y_axis <- c("Antal smolt")
-
 ## Fix things in data to make the figure look OK
 fig_data <- landed_per_year  %>%
   mutate(fcat = case_when(
@@ -79,6 +76,7 @@ fig_data <- landed_per_year  %>%
 
 y_axis <- "Fångster (antal)"
 ##################### FÖR FLERA SERIER stapeldiagram
+pal <- c("#56B4E9", "#009E73", "#F0E442", "#0072B2", "#E69F00", "#D55E00")
 fig_catch <- ggplot(fig_data, aes(x = year, y = N, fill = fcat)) +
   geom_bar(stat = "identity") +
   labs(x = "", y = y_axis) +
@@ -91,7 +89,7 @@ fig_catch <- ggplot(fig_data, aes(x = year, y = N, fill = fcat)) +
                              keywidth = 0.1,
                              keyheight = 0.03,
                              default.unit = "inch")) +
-  theme_rom() +
+  theme_aqua() +
   theme(legend.box.margin = margin(-15,-15,-15,-15))
 
 # spara figuren
