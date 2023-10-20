@@ -3,7 +3,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(writexl)
-library(ggaqua) # https://github.com/maxlindmark/ggaqua
+library(ggaqua) # remotes::install_github("maxlindmark/ggaqua")
 ####
 ## This script will prepare a figure with a time series of catches of salmon by Swedish fishers
 ## both recreational and commercial in the Bailtc sea and rivers entering the Baltic sea.
