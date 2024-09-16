@@ -6,7 +6,7 @@ Scripts to prepare data and figures for https://fiskbarometern.se/.
 To Download and use the script: Start Rstudio Choose `File` ->
 `New Project...` -> `Version Control` -> `Git`
 
-Put https://github.com/kagervall/Fiskbarometern-Lax into the box
+Put https://github.com/SLU-Aqua-diadromous/Fiskbarometern-Lax into the box
 `Repository URL` and Fiskbarometern-Lax in the box `Project Directory 
 Name` finally choose a folder where the project should be stored in 
 `Create project as subdiectory of` click `Create project`.
