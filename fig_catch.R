@@ -83,7 +83,7 @@ fig_catch <- ggplot(fig_data, aes(x = year, y = N, fill = fcat)) +
   scale_fill_manual(values = pal) +
   labs(x = NULL) +
   scale_x_continuous(expand = c(0,0)) +
-  scale_y_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0), labels = scales::label_comma()) +
   guides(fill = guide_legend(nrow = 2,
                              title = "",
                              keywidth = 0.1,
