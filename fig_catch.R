@@ -22,8 +22,8 @@ WGBAST_database <- file.path(Data_root_folder, WGBAST_folder, "WGBAST_Catch_Late
 Fishdata_database <- file.path(Data_root_folder, Fishdata_folder, "fishdata-latest.xlsx")
 
 # Try to automate the start year to use. If wrong just hard code it.
-first_year <- as.numeric(format(Sys.Date(), "%Y")) - 19
-#first_year <- 2003
+#first_year <- as.numeric(format(Sys.Date(), "%Y")) - 19
+first_year <- 2003
 
 river_data <- read_xlsx(Fishdata_database, sheet = "river_sum")
 
@@ -74,10 +74,10 @@ fig_data <- landed_per_year  %>%
     TRUE ~ "Okänt fiske. FIXA!"))
 
 
-y_axis <- "Fångster (antal)"
+y_axis <- "Fångster (antal i tusental)"
 ##################### FÖR FLERA SERIER stapeldiagram
 pal <- c("#56B4E9", "#009E73", "#F0E442", "#0072B2", "#E69F00", "#D55E00")
-fig_catch <- ggplot(fig_data, aes(x = year, y = N, fill = fcat)) +
+fig_catch <- ggplot(fig_data, aes(x = year, y = N/1000, fill = fcat)) +
   geom_bar(stat = "identity") +
   labs(x = "", y = y_axis) +
   scale_fill_manual(values = pal) +
