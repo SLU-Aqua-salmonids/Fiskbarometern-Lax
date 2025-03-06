@@ -7,7 +7,7 @@ To Download the script (i.e. clone repository) for the first time:
 
 1. Start Rstudio Choose `File` ->
 `New Project...` -> `Version Control` -> `Git`
-2. Put https://github.com/SLU-Aqua-diadromous/Fiskbarometern-Lax into the box
+2. Put https://github.com/SLU-Aqua-salmonids/Fiskbarometern-Lax into the box
 `Repository URL` and Fiskbarometern-Lax in the box `Project Directory 
 Name`
 3. finally choose a folder where the project should be stored in 
